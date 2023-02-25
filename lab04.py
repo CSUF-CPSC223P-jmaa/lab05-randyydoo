@@ -19,7 +19,11 @@ def summation(n, term):
     True
     """
     assert n >= 1
-    "*** YOUR CODE HERE ***"
+    if n == 1:
+        return term(n)
+    return term(n) + summation(n - 1, term)
+    
+
 
 
 def paths(m, n):
@@ -35,7 +39,13 @@ def paths(m, n):
     >>> paths(1, 157)
     1
     """
-    "*** YOUR CODE HERE ***"
+    if m == 1 or n == 1:
+        return 1  
+    return paths(m - 1, n) + paths(m, n - 1)
+
+    
+    
+    
 
 
 def pascal(row, column):
@@ -74,4 +84,9 @@ def double_eights(n):
     >>> check(HW_SOURCE_FILE, 'double_eights', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    
+    if n % 100 == 88:
+        return True
+    elif n == 0:
+        return False
+    return double_eights(n // 10)
