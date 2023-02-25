@@ -60,7 +60,13 @@ def pascal(row, column):
     >>> pascal(4, 2)     # Row 4 (1 4 6 4 1), Column 2
     6
     """
-    "*** YOUR CODE HERE ***"
+    if column > row: 
+        return 0
+    elif column == 0 or row == column:
+        return 1
+    return pascal(row - 1,column) + pascal(row -1, column -1)
+
+    
 
 
 def double_eights(n):
